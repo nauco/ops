@@ -6,7 +6,7 @@ metadata:
     app: sample-flask
   namespace: default
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: sample-flask
