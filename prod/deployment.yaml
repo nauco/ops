@@ -16,7 +16,7 @@ spec:
         app: app-prod
     spec:
       containers:
-      - image: 191845259489.dkr.ecr.ap-northeast-2.amazonaws.com/sample-ecr:64
+      - image: 191845259489.dkr.ecr.ap-northeast-2.amazonaws.com/sample-ecr:65
         imagePullPolicy: Always
         name: app-prod
         ports:
