@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-prod
+  labels:
+    app: app-prod
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-prod
+  template:
+    metadata:
+      labels:
+        app: app-prod
+    spec:
+      containers:
+      - image: 191845259489.dkr.ecr.ap-northeast-2.amazonaws.com/sample-ecr:54
+        imagePullPolicy: Always
+        name: app-prod
+        ports:
+        - containerPort: 5000
+          protocol: TCP
