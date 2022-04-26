@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-app
+  name: my-nginx
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      run: my-nginx
+  replicas: 2
   template:
     metadata:
       labels:
-        app: nginx
+        run: my-nginx
     spec:
       containers:
-        - name: nginx
-          image: public.ecr.aws/nginx/nginx:1.19.6
-          ports:
-            - name: http
-              containerPort: 80
+      - name: my-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
